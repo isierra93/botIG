@@ -1,16 +1,13 @@
-const { Builder, Browser, By, Key, until } = require('selenium-webdriver');
-const { config } = require('dotenv');
-config()
-
+const { Builder, Browser, By, Key } = require('selenium-webdriver');
+const dotenv  = require('dotenv');
+dotenv.config()
 /* describe('login',  () =>{
 
 }) */
 
-
-(async function example() {
-  let driver = await new Builder().forBrowser(Browser.EDGE).build();
-
+const start = async () =>{
   try {
+    let driver = await new Builder().forBrowser(Browser.EDGE).build();
     await driver.get('https://www.instagram.com/');
     await driver.manage().addCookie(
       { 
@@ -25,10 +22,13 @@ config()
       .click()
       await driver.findElement(By.css('[aria-label="Agrega un comentario..."]'))
       .sendKeys(process.env.MESSAGE_POST, Key.ENTER)
-      await driver.sleep(75000)
+      await driver.sleep(180000)
     }
-
+  } catch (error) {
+    console.log('Error', error)
   } finally {
-    await driver.quit();
+    await driver.quit()
   }
-})();
+}
+
+start()
