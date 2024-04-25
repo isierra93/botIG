@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "mocha": "^10.3.0",
+    "selenium-webdriver": "^4.17.0",
+    "webdriver-manager": "^12.1.9"
+  },
+  "name": "selenium",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
